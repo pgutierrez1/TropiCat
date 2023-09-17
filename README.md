@@ -1,4 +1,5 @@
 # Tropicat
+
 A cute game where you try to catch fruit as a cat. Built with Unity.
 
 ## tropicat-leaderboard
@@ -7,9 +8,11 @@ Backend database API with SQLite. Front end implementation with React.
 
 ## Developer instructions
 
-[Make sure you have the latest version of Node.js installed](https://nodejs.org/)
+Clone the repo: `git clone https://github.com/pgutierrez1/tropicat`
 
-Clone the repo: `git clone https://github.com/pgutierrez1/tropicat-leaderboard`
+### tropicat-leaderboard
+
+[Make sure you have the latest version of Node.js installed](https://nodejs.org/)
 
 Install the dependencies in both the `client` and `server` folders: `npm install`
 
