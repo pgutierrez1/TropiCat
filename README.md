@@ -1,6 +1,9 @@
-# tropicat-leaderboard
+# Tropicat
+A cute game where you try to catch fruit as a cat. Built with Unity.
 
-Backend database API with SQLite. Front end implementation with React & Next.js.
+## tropicat-leaderboard
+
+Backend database API with SQLite. Front end implementation with React.
 
 ## Developer instructions
 
