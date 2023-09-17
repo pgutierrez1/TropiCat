@@ -1,4 +1,4 @@
-# Tropicat
+# TropiCat
 
 A cute game where you try to catch fruit as a cat. Built with Unity.
 
