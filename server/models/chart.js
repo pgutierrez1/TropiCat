@@ -1,35 +1,28 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
-    "score",
+    "chart",
     {
-      score_id: {
+      chart_id: {
           type: DataTypes.STRING,
               unqiue: true,
               allowNull: false,
       },
-      user_id: {
+      name: {
+          type: DataTypes.STRING,
+              unqiue: true,
+              allowNull: false,
+      },
+      artist: {
           type: DataTypes.STRING,
               allowNull: false,
       },
-      chart_id: {
-          type: DataTypes.STRING,
-              allowNull: false,
-      },
-      username: {
-          type: DataTypes.STRING,
-              allowNull: false,
-      },
-      score: {
-          type: DataTypes.INTEGER,
-              allowNull: false,
-      },
-      accuracy: {
+      plays: {
           type: DataTypes.INTEGER,
               allowNull: false,
       },
     },
     {
-      timestamps: true,
+      timestamps: false,
     }
 
   );

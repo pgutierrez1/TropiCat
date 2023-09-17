@@ -8,21 +8,8 @@ const configPath = './config.json';
 const config = JSON.parse(fs.readFileSync(configPath, 'UTF-8'));
 
 const sqlite3 = require('sqlite3').verbose();
-// import { Database } from "bun:sqlite";
 
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize("database", "user", "password", {
-  host: "localhost",
-  dialect: "sqlite",
-  logging: false,
-  storage: "database.sqlite",
-});
-const Score = require("./models/score")(sequelize, Sequelize.DataTypes);
-
-// avoid CORS issues
-app.use(cors());
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 const connectToDb = async () => {
     try {
@@ -33,10 +20,36 @@ const connectToDb = async () => {
     }
 }
 
+const scoreRoutes = require("./routes/scores.route");
+const chartRoutes = require("./routes/charts.route");
+const userRoutes  = require("./routes/users.route");
+
+// avoid CORS issues
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use("/scores", scoreRoutes);
+app.use("/charts", chartRoutes);
+app.use("/users", userRoutes);
+
+
 app.get("/", async (req, res) => {
     res.send("hiiiiii :3");
 
 });
+// CREATE
+// READ
+// UPDATE
+// DESTROY
+//
+// app.route("/scores")
+//     .get(async (req, res) => {
+//         const scores = await Score.findAll();
+//         res.json(scores);
+//     })
+
+
 
 app.listen(config.port, () => {
     console.log(`Server started on port ${config.port}`);
